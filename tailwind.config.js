@@ -12,6 +12,12 @@ export default {
           darker: '#0f0f0f',
           green: '#1DB954',
           gray: '#282828',
+        },
+        jiosaavn: {
+          darker: '#0C0C0C', // Placeholder, adjust as needed
+          card: '#1C1C1C',   // Placeholder, adjust as needed
+          gray: '#333333',   // Placeholder, adjust as needed
+          green: '#20BC70',  // Placeholder, adjust as needed
         }
       }
     },
