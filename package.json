@@ -2,7 +2,7 @@
   "name": "spotify-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://saavn.sumit.co",
+  "proxy": "http://localhost:5000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaSpinner, FaFire, FaMusic, FaCompactDisc } from 'react-icons/fa';
-import jiosaavnApi from '../../services/jiosaavnApi';
+import { getTrendingSongs, getNewReleases, getCharts } from '../../services/jiosaavnApi';
 import { useMusicStore } from '../../store/musicStore';
 import SongCard from './SongCard';
 
@@ -24,9 +24,9 @@ export default function Discover() {
 
     try {
       const [trending, releases, chartData] = await Promise.all([
-        jiosaavnApi.getTrendingSongs(20),
-        jiosaavnApi.getNewReleases(20),
-        jiosaavnApi.getCharts('songs', 20),
+        getTrendingSongs(20),
+        getNewReleases(20),
+        getCharts('songs', 20),
       ]);
 
       setTrendingSongs(trending || []);

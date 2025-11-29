@@ -4,7 +4,7 @@ import axios from 'axios';
 const API_BASE_URL = '';
 
 // Alternative: You can also use Spotify Web API if you have credentials
-const SPOTIFY_API_BASE = 'https://api.spotify.com/v1';
+// const SPOTIFY_API_BASE = 'https://api.spotify.com/v1';
 
 class MusicApiService {
   // Search songs

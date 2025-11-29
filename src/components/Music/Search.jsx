@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { FaSearch, FaSpinner } from 'react-icons/fa';
-import jiosaavnApi from '../../services/jiosaavnApi';
+import { searchSongs, searchArtists, searchAlbums } from '../../services/jiosaavnApi';
 import { useMusicStore } from '../../store/musicStore';
 import SongCard from './SongCard';
 
@@ -28,11 +28,11 @@ export default function Search() {
       let searchResults = [];
 
       if (searchType === 'songs') {
-        searchResults = await jiosaavnApi.searchSongs(query, 50);
+        searchResults = await searchSongs(query, 50);
       } else if (searchType === 'artists') {
-        searchResults = await jiosaavnApi.searchArtists(query, 50);
+        searchResults = await searchArtists(query, 50);
       } else if (searchType === 'albums') {
-        searchResults = await jiosaavnApi.searchAlbums(query, 50);
+        searchResults = await searchAlbums(query, 50);
       }
 
       setResults(searchResults || []);
