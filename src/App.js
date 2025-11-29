@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Sidebar from './components/Sliderbar';
+import Player from './components/Player';
+import Queue from './components/Queue';
+import Discover from './components/Discover';
+import Search from './components/Search';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="flex h-screen bg-spotify-dark text-white">
+        <Sidebar />
+        
+        <div className="flex-1 flex flex-col">
+          <div className="flex-1 flex overflow-hidden">
+            <Routes>
+              <Route path="/" element={<Discover />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/library" element={<Discover />} />
+              <Route path="/liked" element={<Discover />} />
+            </Routes>
+            <Queue />
+          </div>
+          <Player />
+        </div>
+      </div>
+    </Router>
   );
 }
 
